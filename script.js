@@ -78,3 +78,43 @@ line1
 line2
 ${renovationJob.maximumPrice}`;
 console.log(result5);
+
+// ternary operator
+renovationJob.maximumPrice > 1000
+  ? console.log(renovationJob.maximumPrice)
+  : console.log(1000);
+
+if (renovationJob.maximumPrice == 5000) {
+  console.log(2000);
+} else {
+  console.log(renovationJob.maximumPrice);
+}
+
+const priceAsString = 5000;
+
+// == is a loose comparision and ignores the type
+// if (priceAsString == 5000) {
+
+// === is strict comparision and take account of types
+if (priceAsString === 5000) {
+  console.log("hello");
+} else {
+  console.log("bye");
+}
+
+// print byes
+console.log(`${(priceAsString === 4000 && "hello") || "byes"}`);
+
+// prints hello
+console.log(`${(priceAsString === 5000 && "hello") || "byes"}`);
+
+// old way of accessing html elements; prefer querySelector
+console.log(`${document.getElementsByClassName("heading").length}`);
+
+// modern way of accessing html elements
+const headingElement = document.querySelector(".heading");
+console.log(headingElement);
+
+headingElement.textContent = "JS Fundamentals";
+headingElement.innerHTML =
+  "JS <span class='heading--big'> Fundamentals </span> !";
