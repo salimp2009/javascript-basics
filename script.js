@@ -118,3 +118,21 @@ console.log(headingElement);
 headingElement.textContent = "JS Fundamentals";
 headingElement.innerHTML =
   "JS <span class='heading--big'> Fundamentals </span> !";
+
+headingElement.insertAdjacentHTML(
+  "beforebegin",
+  "Hello <span class='heading--big'> javascript </span> !"
+);
+
+// manipulate css; Not recommended a way of setting css
+headingElement.style.backgroundColor = "purple";
+headingElement.style.fontSize = "15px";
+
+// css manipulating thru classes; Recommended way
+headingElement.classList.add("heading--small");
+
+const clickHandler = () => {
+  headingElement.style.color = "green";
+  console.log("testin click");
+};
+headingElement.addEventListener("click", clickHandler);
