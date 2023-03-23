@@ -32,3 +32,21 @@ if (!response.ok) {
 } else {
   console.log(response.data);
 }
+
+let number = [99, 5, 8, 16];
+console.log([1, 2, 3, ...number]);
+console.log([...number, 1, 2, 3, ...number]);
+console.log(typeof number.join());
+console.log(typeof number);
+console.log(number.join("-"));
+console.log(number.includes(16));
+console.log([[number], [number]].flat(2));
+console.log(
+  number.map((item, index) => {
+    return item * index;
+  })
+);
+console.log(number);
+
+number.forEach((item) => console.log(item * 3));
+console.log(number);
