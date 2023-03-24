@@ -33,23 +33,23 @@ if (!response.ok) {
   console.log(response.data);
 }
 
-let number = [99, 5, 8, 16];
-console.log([1, 2, 3, ...number]);
-console.log([...number, 1, 2, 3, ...number]);
-console.log(typeof number.join());
-console.log(typeof number);
-console.log(number.join("-"));
-console.log(number.includes(16));
-console.log([[number], [number]].flat(2));
+let numbers = [99, 5, 8, 16];
+console.log([1, 2, 3, ...numbers]);
+console.log([...numbers, 1, 2, 3, ...numbers]);
+console.log(typeof numbers.join());
+console.log(typeof numbers);
+console.log(numbers.join("-"));
+console.log(numbers.includes(16));
+console.log([[numbers], [numbers]].flat(2));
 console.log(
-  number.map((item, index) => {
+  numbers.map((item, index) => {
     return item * index;
   })
 );
-console.log(number);
+console.log(numbers);
 
-number.forEach((item) => console.log(item * 3));
-console.log(number);
+numbers.forEach((item) => console.log(item * 3));
+console.log(numbers);
 
 // nested objects
 const user = {
@@ -89,9 +89,15 @@ peopleData.map((person) => {
   console.log(person);
 });
 
-const log = (user) => {
+const logUser = (user) => {
   console.log("username:", user.name);
   console.log("first hobby: ", user.hobbies[0]);
 };
 
-log(user);
+logUser(user);
+
+let number = 100;
+number = number + 1;
+number++;
+console.log(++number);
+console.log(--number);
