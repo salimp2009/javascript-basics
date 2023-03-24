@@ -50,3 +50,48 @@ console.log(number);
 
 number.forEach((item) => console.log(item * 3));
 console.log(number);
+
+// nested objects
+const user = {
+  name: "Doritos",
+  hobbies: ["programming", "coffee"],
+  address: {
+    city: "LA",
+    state: "CA",
+  },
+};
+
+console.log(user);
+console.log(user.name);
+console.log(user.hobbies);
+console.log("city:", user.address.city);
+
+// objects in array
+const peopleData = [
+  {
+    name: "Didos",
+    age: "50",
+  },
+  {
+    name: "Salitos",
+    age: "51",
+  },
+  {
+    name: "Semos",
+    age: "66",
+  },
+];
+
+console.log(peopleData);
+
+peopleData.map((person) => {
+  console.log(person.name, ":", person.age);
+  console.log(person);
+});
+
+const log = (user) => {
+  console.log("username:", user.name);
+  console.log("first hobby: ", user.hobbies[0]);
+};
+
+log(user);
