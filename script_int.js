@@ -89,9 +89,14 @@ peopleData.map((person) => {
   console.log(person);
 });
 
+const logGreeting = (name) => {
+  console.log("Hello", name);
+};
+
 const logUser = (user) => {
   console.log("username:", user.name);
   console.log("first hobby: ", user.hobbies[0]);
+  logGreeting(user.name);
 };
 
 logUser(user);
@@ -101,3 +106,34 @@ number = number + 1;
 number++;
 console.log(++number);
 console.log(--number);
+
+const checkValidity = (person) => {
+  if (person === "didem") {
+    console.log(person);
+    return;
+  }
+
+  console.log("semos");
+};
+
+checkValidity("didem");
+
+number = 10;
+number = 20;
+console.log(number, typeof number);
+
+// hoisting; calling function before definition
+logMisc();
+function logMisc() {
+  console.log("misc");
+}
+
+setTimeout(() => {
+  console.log("this is followed by: ");
+  console.log("this is second! ");
+}, 1000);
+
+// setInterval(() => {
+//   console.log("this is followed by: ");
+//   console.log("this is second! ");
+// }, 1000);
