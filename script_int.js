@@ -153,3 +153,14 @@ numbers.forEach((item) => {
 });
 
 console.log(numbers);
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    console.log(data[0].title);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
