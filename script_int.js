@@ -137,3 +137,19 @@ setTimeout(() => {
 //   console.log("this is followed by: ");
 //   console.log("this is second! ");
 // }, 1000);
+
+var intervalID = setInterval(() => {
+  console.log("intervalID : ", intervalID);
+}, 1000); // 5000 milliseconds (5 seconds)
+
+// Stop the setTimeout function after 2 seconds
+setTimeout(() => {
+  clearInterval(intervalID);
+  console.log("clearInterval");
+}, 2000); // 2000 milliseconds (2 seconds)
+
+numbers.forEach((item) => {
+  item = item + 50;
+});
+
+console.log(numbers);
