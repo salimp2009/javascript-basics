@@ -164,3 +164,18 @@ fetch("https://jsonplaceholder.typicode.com/todos")
   .catch((error) => {
     console.log(error);
   });
+
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    // console.log(data);
+    data.forEach((user) => {
+      const markup = `<li>${user.name}</li>`;
+      document.querySelector("ul").insertAdjacentHTML("beforeend", markup);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
