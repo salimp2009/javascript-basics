@@ -180,13 +180,27 @@ fetch("https://jsonplaceholder.typicode.com/users")
     console.log(error);
   });
 
-fetch("https://reqres.in/api/users")
+const newUser = {
+  name: "Maria",
+  job: "Teacher",
+};
+
+fetch("https://reqres.in/api/users", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(newUser),
+})
   .then((res) => {
-    console.log(res);
+    if (!res.ok) {
+      console.log("Not found!");
+      return;
+    }
     return res.json();
   })
-  .then((data) => {
-    console.log(data.data[2].first_name);
+  .then(() => {
+    console.log("Success!");
   })
   .catch((error) => {
     console.log(error);
