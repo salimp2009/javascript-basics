@@ -179,3 +179,15 @@ fetch("https://jsonplaceholder.typicode.com/users")
   .catch((error) => {
     console.log(error);
   });
+
+fetch("https://reqres.in/api/users")
+  .then((res) => {
+    console.log(res);
+    return res.json();
+  })
+  .then((data) => {
+    console.log(data.data[2].first_name);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
