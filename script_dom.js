@@ -1,6 +1,17 @@
 const buttonEl = document.querySelector(".btn");
 const inputEl = document.querySelector(".input");
 const headingEl = document.querySelector(".heading");
+const containerEl = document.querySelector(".container");
+const listEl = document.querySelector(".list");
+
+listEl.addEventListener("click", (event) => {
+  // console.log(event.target);
+  console.log(event.target.textContent);
+});
+
+containerEl.addEventListener("click", (event) => {
+  console.log(event.target);
+});
 
 const number2 = 10;
 const user2 = {
