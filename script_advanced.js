@@ -1,3 +1,4 @@
+// ARRAYS
 const numbers = [10, 100, 500, 1000];
 console.log(numbers);
 
@@ -16,8 +17,31 @@ const doubled_numbrs = numbers.map((number) => {
 
 console.log(doubled_numbrs);
 
+// return true or false if any elem satisfies function
 const check_odd_numbrs = numbers.some((number) => {
   return number % 2 === 1;
 });
 
 console.log(check_odd_numbrs);
+
+// filter can take up to 3 parameter the value passed frm container
+// index and original array as a whole
+const testArray = [10, 20, 30];
+const newNumbrs = numbers.filter((number, index, thisArray) => {
+  console.log("array at:", index, "value: ", thisArray[index]);
+  return number > 100;
+});
+
+console.log(newNumbrs);
+
+// OBJECTS
+const user = {
+  name: "Salitos",
+  age: 45,
+};
+
+console.log(user.age);
+console.log(user["name"]);
+
+user.age = 46;
+console.log("revised age: ", user.age);
