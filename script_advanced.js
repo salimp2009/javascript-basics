@@ -45,3 +45,23 @@ console.log(user["name"]);
 
 user.age = 46;
 console.log("revised age: ", user.age);
+
+// functions defined in an object needs to have function keyword
+// ananonymous(arrow) functions cannot be used
+// this keyword required to refer to any of objects properties
+const obj1 = {
+  firstname: "Salitoss",
+  hobbies: ["climbing", "movies", "coffee"],
+  calculateLength: function () {
+    console.log(this.hobbies);
+    return this.hobbies.length;
+  },
+};
+
+console.log(obj1.calculateLength());
+
+const calculatePrice = (sqMeters = 10000) => {
+  return 1.5 * sqMeters;
+};
+
+console.log(calculatePrice());
