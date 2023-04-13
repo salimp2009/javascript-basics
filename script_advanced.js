@@ -38,6 +38,7 @@ console.log(newNumbrs);
 const user = {
   name: "Salitos",
   age: 45,
+  city: "Istanbul",
 };
 
 console.log(user.age);
@@ -65,3 +66,12 @@ const calculatePrice = (sqMeters = 10000) => {
 };
 
 console.log(calculatePrice());
+
+// Destructuring
+const { name, city } = user;
+console.log(name, city);
+
+const [a, b, _, c] = numbers;
+console.log(a, b, c);
+
+console.log([...numbers, ...doubled_numbrs]);
