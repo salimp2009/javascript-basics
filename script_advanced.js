@@ -75,3 +75,13 @@ const [a, b, _, c] = numbers;
 console.log(a, b, c);
 
 console.log([...numbers, ...doubled_numbrs]);
+
+// objects, variable, reference are not equal even if the values
+// they store are the same since it compares the pointer address
+console.log({ name: "Salitos" } === { name: "Salitos" });
+
+// short circuiting with && and ||
+const price = 1000;
+
+price > 500 && console.log("price:", price);
+price > 5000 && console.log("price:expensive", price);
