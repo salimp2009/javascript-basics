@@ -1,5 +1,10 @@
 const btnEl = document.querySelector(".btn");
-console.log(btnEl);
+const btnSubmitEl = document.querySelector(".btn_submit");
+
+const newUser = {
+  name: "Salitos",
+  job: "Programmer",
+};
 
 // traditional .then for async event; prefer newer method with await
 const clickHandler = () => {
@@ -35,4 +40,27 @@ const clickHandler2 = async () => {
   }
 };
 
+const submitHandler = async () => {
+  try {
+    const response = await fetch("https://reqres.in/api/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.log(data.description);
+      return;
+    }
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 btnEl.addEventListener("click", clickHandler2);
+btnSubmitEl.addEventListener("click", submitHandler);
