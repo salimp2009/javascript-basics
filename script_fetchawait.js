@@ -62,5 +62,49 @@ const submitHandler = async () => {
   }
 };
 
+const submitHandler2 = async () => {
+  try {
+    const response = await fetch("https://reqres.in/api/users/33", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.log(data.description);
+      return;
+    }
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const submitHandler3 = async () => {
+  try {
+    const response = await fetch("https://reqres.in/api/users/3", {
+      method: "DELETE",
+    });
+
+    const data = response;
+
+    if (!response.ok) {
+      console.log(data.description);
+      return;
+    }
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 btnEl.addEventListener("click", clickHandler2);
 btnSubmitEl.addEventListener("click", submitHandler);
+btnSubmitEl.addEventListener("click", submitHandler2);
+btnSubmitEl.addEventListener("click", submitHandler3);
+
+// console.log("price in TL:", convertCurrency(500));
