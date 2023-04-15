@@ -1,3 +1,3 @@
 export const convertCurrency = (usdAmount) => {
-  usdAmount * 1.9;
+  return usdAmount * 1.9;
 };
