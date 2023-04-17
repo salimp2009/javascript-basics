@@ -62,13 +62,23 @@ const createApartment = (sqmeters, numberofbedrooms) => {
 };
 
 console.log(createApartment(100, 4));
+console.log(createApartment(100, 4).isBig());
 
 class Apartment {
   constructor(sqMeters, numbrOfBedrooms) {
     this.sqMeters = sqMeters;
     this.numbrOfBedrooms = numbrOfBedrooms;
   }
+
+  isBig() {
+    return this.sqMeters > 100 ? true : false;
+  }
+
+  calculatePrice() {
+    return this.sqMeters * this.numbrOfBedrooms;
+  }
 }
 
 const apartment2 = new Apartment(50, 4);
 console.log(apartment2);
+console.log(apartment2.calculatePrice());
