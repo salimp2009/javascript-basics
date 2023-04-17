@@ -26,3 +26,7 @@ const checkResults = async () => {
 };
 
 checkResults();
+
+fetch("https://reqres.in/api/users")
+  .then((response) => response.json())
+  .then((data) => console.log(data.data[2].email));
