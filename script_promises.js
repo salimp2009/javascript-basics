@@ -27,6 +27,14 @@ const checkResults = async () => {
 
 checkResults();
 
-fetch("https://reqres.in/api/users")
-  .then((response) => response.json())
-  .then((data) => console.log(data.data[2].email));
+fetch("https://reqress.in/api/users")
+  .then((response) => {
+    if (!response.ok) {
+      return Promise.reject("4xx or 5xx problem");
+    }
+    return response.json();
+  })
+  .then((data) => console.log(data.data[2].email))
+  .catch((error) => {
+    console.log("Error is", error);
+  });
